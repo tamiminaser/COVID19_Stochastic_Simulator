@@ -1,0 +1,14 @@
+import requests
+
+url = "https://xdigi-ocr.cognitiveservices.azure.com/vision/v2.0/ocr?language=unk&detectOrientation=True"
+
+payload = "{'url':'https://weagree.com/wp-content/uploads/2017/02/EU_style_final_page_15-05-2011.png'}"
+headers = {
+  'Content-Type': 'application/json',
+  'Ocp-Apim-Subscription-Key': '3d2d30ec2cd34c6eb83ec13f9c430d30',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
